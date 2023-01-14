@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBookReader, FaHome, FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthProvider';
@@ -12,11 +12,29 @@ const Header = () => {
           .catch(error => console.error(error))
         navigate('/')
       }
+      const [info, setInfo] = useState([])
+      useEffect(() => {
+        fetch(`http://localhost:5000/information?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setInfo(data))
+
+    }, [user?.email])
     const headItems = <>
            <li><Link to='/'><a>home</a></Link></li>
            <li><Link to='/addProducts'> <a>Add-product</a></Link></li>
-           <li><Link to='/userInfo'> <a>User-info</a></Link></li>
-           <li><Link to='/information'> <a>Set-info</a></Link></li>
+           {
+            user?.uid &&  <li><Link to='/userInfo'> <a>User-info</a></Link></li>
+           }
+           
+           {
+            user?.uid && <>
+            {
+              info[0]?.age ? <></> : <li><Link to='/information'> <a>Set-info</a></Link></li>
+            }
+            </>
+           } 
+          
+           
        </>
     return (
         <div className=''>
@@ -30,7 +48,7 @@ const Header = () => {
                         {headItems}
                     </ul>
                 </div>
-             <Link to='/home'><a className="btn normal-case text-xl">OFP MEDIA</a></Link>   
+             <Link to='/home'><a className="btn normal-case text-xl">Digital-Comp</a></Link>   
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
