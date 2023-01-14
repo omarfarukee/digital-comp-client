@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({product}) => {
-    const {name, image, price, _id} = product
+    const {name, image, price, _id, categoryId} = product
     const [prod, setProd] = useState([])
 
     useEffect(() =>{
@@ -40,7 +41,7 @@ const ProductCard = ({product}) => {
                     <p>price - {price} Rs.</p>
                     <div className="card-actions">
                         <button onClick={() => handleDeleteProd(_id)} className="btn btn-error">delete</button>
-                        <button className="btn btn-primary">Update</button>
+                       <Link to={`/products/${categoryId}/${_id}`}><button className="btn btn-primary">Edit---</button></Link> 
                     </div>
                 </div>
             </div>

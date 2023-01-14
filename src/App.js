@@ -11,6 +11,7 @@ import UserInfo from './Componets/User-info/UserInfo';
 import Edit from './Componets/Edit/Edit';
 import Products from './Componets/Products/Products';
 import AddProducts from './Componets/AddProducts/AddProducts';
+import ProductEdit from './Componets/ProductEdit/ProductEdit';
 
 function App() {
 
@@ -55,6 +56,13 @@ const router = createBrowserRouter([
           element:<Products></Products>,
           loader:async ({params}) =>{
           return fetch(`http://localhost:5000/products/${params.id}`)
+          }
+      },
+      {
+        path:'/products/:id/:id',
+          element:<ProductEdit></ProductEdit>,
+          loader:async ({params}) =>{
+          return fetch(`http://localhost:5000/products/${params.id}/${params.id}`)
           }
       },
     ]
