@@ -13,7 +13,8 @@ const Header = () => {
         navigate('/')
       }
     const headItems = <>
-           <li><Link to='/'> <a>home</a></Link></li>
+           <li><Link to='/'><a>home</a></Link></li>
+           <li><Link to='/addProducts'> <a>Add-product</a></Link></li>
            <li><Link to='/userInfo'> <a>User-info</a></Link></li>
            <li><Link to='/information'> <a>Set-info</a></Link></li>
        </>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaUserCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const UserInfo = () => {
@@ -18,13 +19,13 @@ const UserInfo = () => {
         <div>
             <div className='pt-10 flex justify-end mr-2'>
               
-           { info[0]?.age ? <label htmlFor="item-modal" className="btn btn-outline" >Edit user Info </label> : <></>}  
+           { info[0]?.age ? <Link  to={`/information/${info[0]?._id}`}><label htmlFor="item-modal" className="btn btn-outline" >Edit user Info </label></Link>  : <></>}  
          
             </div>
             <div className='flex justify-center'>
                 {
                     info[0]?.age ? <></>:
-                     <p className='text-3xl text-red-400 font-bold'>Please set your info on 'Info-set' menu</p>
+                     <p className='text-3xl text-red-400 font-bold'>Please set your info on 'Set-info' menu</p>
                 }
                
             </div>

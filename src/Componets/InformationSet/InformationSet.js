@@ -33,7 +33,7 @@ const InformationSet = () => {
             console.log(data)
             if(data.acknowledged){
               toast.success('user info saved')
-                navigate('/setInfo')
+                navigate('/userInfo')
                 window.location.reload()
             }
         })
