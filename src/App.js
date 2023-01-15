@@ -12,6 +12,8 @@ import Edit from './Componets/Edit/Edit';
 import Products from './Componets/Products/Products';
 import AddProducts from './Componets/AddProducts/AddProducts';
 import ProductEdit from './Componets/ProductEdit/ProductEdit';
+import CategoryAdd from './Componets/CategoryAdd/CategoryAdd';
+import CategoryEdit from './Componets/Categories/CategoryEdit';
 
 function App() {
 
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
         element:<AddProducts></AddProducts>
       },
       {
+        path:'/addCategory',
+        element:<CategoryAdd></CategoryAdd>
+      },
+      {
         path:'/information/:id',
           element:<Edit></Edit>,
           loader:async ({params}) =>{
@@ -56,6 +62,13 @@ const router = createBrowserRouter([
           element:<Products></Products>,
           loader:async ({params}) =>{
           return fetch(`http://localhost:5000/products/${params.id}`)
+          }
+      },
+      {
+        path:'/categories/:id',
+          element:<CategoryEdit></CategoryEdit>,
+          loader:async ({params}) =>{
+          return fetch(`http://localhost:5000/categories/${params.id}`)
           }
       },
       {

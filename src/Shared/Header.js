@@ -21,7 +21,9 @@ const Header = () => {
     }, [user?.email])
     const headItems = <>
            <li><Link to='/'><a>home</a></Link></li>
-           <li><Link to='/addProducts'> <a>Add-product</a></Link></li>
+           <li><Link to='/addCategory'> <a>Add-Category</a></Link></li>
+
+            <li><Link to='/addProducts'> <a>Add-product</a></Link></li>
            {
             user?.uid &&  <li><Link to='/userInfo'> <a>User-info</a></Link></li>
            }
