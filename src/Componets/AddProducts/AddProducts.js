@@ -8,7 +8,7 @@ const AddProducts = () => {
     const { data: categories = [], refetch} = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/categories`);
+            const res = await fetch(`https://digital-comp-server.vercel.app/categories`);
             const data = await res.json();
             return data;
         }  
@@ -49,7 +49,7 @@ const AddProducts = () => {
             }
 
           
-            fetch('http://localhost:5000/products', {
+            fetch('https://digital-comp-server.vercel.app/products', {
 
                 method: 'POST', 
                 headers: {

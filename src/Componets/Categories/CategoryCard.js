@@ -1,22 +1,24 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FaCross, FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const CategoryCard = ({ category }) => {
+    const {loading} = useContext(AuthContext)
     const { name, image, _id } = category
     const [prod, setProd] = useState([])
 
     useEffect(() =>{
-        axios.get('http://localhost:5000/categories')
+        axios.get('https://digital-comp-server.vercel.app/categories')
         .then(data => setProd(data.data))
     } ,[])
 
     const handleDeleteCategory = id =>{
         const proceed = window.confirm('Are you sure you want to delete this Category?')
         if(proceed){
-            fetch( `http://localhost:5000/categories/${id}`, {
+            fetch( `https://digital-comp-server.vercel.app/categories/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

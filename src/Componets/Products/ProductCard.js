@@ -8,14 +8,14 @@ const ProductCard = ({product}) => {
     const [prod, setProd] = useState([])
 
     useEffect(() =>{
-        axios.get('http://localhost:5000/products')
+        axios.get('https://digital-comp-server.vercel.app/products')
         .then(data => setProd(data.data))
     } ,[])
 
     const handleDeleteProd = id =>{
         const proceed = window.confirm('Are you sure you want to delete this product?')
         if(proceed){
-            fetch( `http://localhost:5000/products/${id}`, {
+            fetch( `https://digital-comp-server.vercel.app/products/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

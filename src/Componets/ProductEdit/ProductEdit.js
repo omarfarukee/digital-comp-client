@@ -14,7 +14,7 @@ const ProductEdit = () => {
         event.preventDefault()
         console.log(users)
 
-         fetch(`http://localhost:5000/products/${information?._id}`, {
+         fetch(`https://digital-comp-server.vercel.app/products/${information?._id}`, {
             method: 'PUT',
 
             headers: {

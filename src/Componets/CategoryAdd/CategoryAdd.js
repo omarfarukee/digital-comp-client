@@ -34,7 +34,7 @@ const CategoryAdd = () => {
             }
 
           
-            fetch('http://localhost:5000/categories', {
+            fetch('https://digital-comp-server.vercel.app/categories', {
 
                 method: 'POST', 
                 headers: {
@@ -49,7 +49,7 @@ const CategoryAdd = () => {
                 console.log(result)
                 alert('its can take few moment please wait')
                 toast.success('added Category successfully')
-             navigate('/')
+             navigate('/category')
             })
 
           }

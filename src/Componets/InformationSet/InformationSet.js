@@ -21,7 +21,7 @@ const InformationSet = () => {
         }
        
 
-        fetch('http://localhost:5000/information', {
+        fetch('https://digital-comp-server.vercel.app/information', {
             method: 'POST',
             headers : {
                 'content-type' : 'application/json'

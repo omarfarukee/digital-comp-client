@@ -13,7 +13,7 @@ const Edit = () => {
         event.preventDefault()
         console.log(users)
 
-         fetch(`http://localhost:5000/information/${information?._id}`, {
+         fetch(`https://digital-comp-server.vercel.app/information/${information?._id}`, {
             method: 'PUT',
 
             headers: {

@@ -14,7 +14,7 @@ const Header = () => {
       }
       const [info, setInfo] = useState([])
       useEffect(() => {
-        fetch(`http://localhost:5000/information?email=${user?.email}`)
+        fetch(`https://digital-comp-server.vercel.app/information?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setInfo(data))
 
@@ -50,7 +50,7 @@ const Header = () => {
                         {headItems}
                     </ul>
                 </div>
-             <Link to='/home'><a className="btn bg-transparent border-none text-xl text-black hover:text-white flex"><img src={logo} alt='' className='w-10'/><span className='hidden lg:block'>Digital</span><span className='text-sm lg:text-xl'>-Comp</span> </a></Link>   
+             <Link to='/home'><a className="btn bg-transparent border-none text-xl text-black hover:text-white flex"><img src={logo} alt='' className='w-10'/><span className='hidden lg:block'>igital</span><span className='text-sm lg:text-xl'>-Comp</span> </a></Link>   
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

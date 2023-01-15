@@ -13,7 +13,7 @@ const CategoryEdit = () => {
         event.preventDefault()
         console.log(users)
 
-         fetch(`http://localhost:5000/categories/${info?._id}`,{
+         fetch(`https://digital-comp-server.vercel.app/categories/${info?._id}`,{
             method: 'PUT',
 
             headers: {

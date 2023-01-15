@@ -9,7 +9,7 @@ const UserInfo = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [info, setInfo] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/information?email=${user?.email}`)
+        fetch(`https://digital-comp-server.vercel.app/information?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setInfo(data))
 
