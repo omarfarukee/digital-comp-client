@@ -16,7 +16,7 @@ const Categories = () => {
    
     return (
         <div>
-            <div className='text-4xl text-gray-500 font-bold flex justify-center mt-5'>
+            <div className='text-4xl text-gray-500 font-bold flex text-center justify-center mt-5'>
                 <h1>Here ere the Categories</h1>
             </div>
             <div className='flex justify-center'>
