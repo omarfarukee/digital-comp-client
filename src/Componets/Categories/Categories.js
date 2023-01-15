@@ -14,7 +14,7 @@ const Categories = () => {
     return (
         <div>
             <div className='flex justify-center'>
-                 <div className='grid grid-cols-3 gap-3'>
+                 <div className='lg:grid lg:grid-cols-3 lg:gap-3'>
                 {
                     categories?.map(category => <CategoryCard
                     key={category._id}

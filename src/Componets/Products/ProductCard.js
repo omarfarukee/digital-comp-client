@@ -31,8 +31,8 @@ const ProductCard = ({product}) => {
         }
   }
     return (
-        <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <div className='mb-3'>
+            <div className="card w-11/12 ml-3 lg:ml-0 lg:w-96 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="Shoes"  className="rounded-xl h-52" />
                 </figure>

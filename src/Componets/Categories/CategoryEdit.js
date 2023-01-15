@@ -47,16 +47,16 @@ const CategoryEdit = () => {
             <h1 className='text-3xl text-green-500 font-bold'>Update Category info</h1>
         </div>
         <div className='flex justify-center'>
-           <form className='w-96 text-center' onSubmit={handleUpdate} >
+           <form className='w-11/12 lg:w-96 text-center' onSubmit={handleUpdate} >
             <div className='flex justify-center'>
                 <img src={info?.image} alt='' className="rounded-xl w-80" />
             </div>
                 
-                <label className='mt-3'>Product Name</label>
+                <label className='mt-3'>Category Name</label>
                 <input onChange={handleChange} name='name' defaultValue={info?.name} type="text" placeholder="name" className=" mt-3 input input-bordered w-full "  required /> <br />
                 {/* <label className='mt-3'>Price</label> */}
                 {/* <input onChange={handleChange} name='price' defaultValue={information.price} type="number" placeholder="price" className=" mt-3 input input-bordered w-full " required /> <br /> */}
-                <button className="btn btn-success mt-3 w-full">Update category info</button>
+                <button className="btn btn-info mt-3 w-full">Update category Name</button>
             </form>
         </div>
     </div>

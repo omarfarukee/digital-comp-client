@@ -8,7 +8,7 @@ const Products = () => {
 
     return (
         <div>
-            <div className='flex justify-center mt-5'>
+            <div className='flex justify-center mt-5 text-center'>
                 {products?.length === 0 ? <h1 className='text-3xl text-red-600'>No products products founded based on this category</h1>
                 :
                 <h1 className='text-3xl text-green-600'>{products?.length} products founded based on this category</h1>
@@ -16,7 +16,7 @@ const Products = () => {
                 }
             </div>
             <div className='flex justify-center'>
-                 <div className='grid grid-cols-3 mt-10 gap-5'>
+                 <div className='lg:grid lg:grid-cols-3 mt-10 gap-5'>
                 {
                     products?.map(product => <ProductCard
                         key={product._id}

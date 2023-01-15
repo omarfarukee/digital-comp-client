@@ -47,7 +47,7 @@ const Edit = () => {
             <h1 className='text-3xl text-green-500 font-bold'>Update Info</h1>
         </div>
         <div className='flex justify-center'>
-           <form className='w-96 ' onSubmit={handleUpdate}>
+           <form className='w-11/12 lg:w-96' onSubmit={handleUpdate}>
                 <input name="name" disabled defaultValue={user?.displayName}  className="mt-2 input input-bordered w-full " /> <br />
                 <input  name="email" disabled defaultValue={user?.email} className="mt-2 input input-bordered w-full " /> <br />
                 <input onChange={handleChange} name='age' defaultValue={information.age} type="text" placeholder="age" className=" mt-3 input input-bordered w-full "  required /> <br />

@@ -48,7 +48,7 @@ const ProductEdit = () => {
             <h1 className='text-3xl text-green-500 font-bold'>Update Product info</h1>
         </div>
         <div className='flex justify-center'>
-           <form className='w-96 text-center' onSubmit={handleUpdate} >
+           <form className='text-center w-11/12 lg:w-96' onSubmit={handleUpdate} >
             <div className='flex justify-center'>
                 <img src={information?.image} alt="Shoes"  className="rounded-xl w-80" />
             </div>

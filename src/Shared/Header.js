@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBookReader, FaHome, FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthProvider';
-
+import logo from '../images/pngwing.com.png'
 const Header = () => {
     const {logOut, user} = useContext(AuthContext)
     const navigate = useNavigate()
@@ -50,7 +50,7 @@ const Header = () => {
                         {headItems}
                     </ul>
                 </div>
-             <Link to='/home'><a className="btn normal-case text-xl">Digital-Comp</a></Link>   
+             <Link to='/home'><a className="btn bg-transparent border-none text-xl text-black hover:text-white flex"><img src={logo} alt='' className='w-10'/><span className='hidden lg:block'>Digital</span><span className='text-sm lg:text-xl'>-Comp</span> </a></Link>   
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -60,7 +60,7 @@ const Header = () => {
             <div className="navbar-end">
 
             {
-            user?.uid ? <p className='mr-3 font-bold text-sm'>'{ user.displayName}'</p> : <p className='font-bold text-sm mr-3'>'user not login'</p>
+            user?.uid ? <p className='mr-3 font-bold text-sm hidden lg:block'>'{ user.displayName}'</p> : <p className='font-bold text-sm mr-3 hidden lg:block'>'user not login'</p>
           } 
           {
             user?.photoURL  ? <img src={user?.photoURL} alt=""  className='rounded-full h-10 mr-3' /> : <span className='mr-1'><FaUserCircle className='text-3xl'></FaUserCircle></span>

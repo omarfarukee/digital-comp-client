@@ -61,9 +61,9 @@ const CategoryAdd = () => {
         <div>
             <div className='flex justify-center text-gray-500 text-3xl font-bold mt-10 mb-10'><h1>Add Category</h1></div>
             <div className=' flex justify-center'>
-                <form onSubmit={handleSubmit(handleAddItem)} className='shadow-2xl p-5 rounded-3xl'>
+                <form onSubmit={handleSubmit(handleAddItem)} className='shadow-2xl p-5 rounded-3xl w-11/12 lg:w-96'>
 
-                <div className=' p-5 rounded-2xl'>
+                <div className=' lg:p-5 p-2 rounded-2xl'>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Category Name</span></label>

@@ -15,9 +15,9 @@ const Login = () => {
     const { login, signInWithGoogle, resetPass} = useContext(AuthContext)
 
     const [userEmail, setUserEmail] = useState('')
-    // const navigate = useNavigate()
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || '/'
+    const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = data => {
         console.log(data)
@@ -27,7 +27,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('User Login Successfully')
-                //  navigate(from, {replace: true});
+                 navigate(from, {replace: true});
 
             })
             .catch(error => {
@@ -41,7 +41,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('User Login Successfully')
-                // navigate(from, {replace: true});
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error.message)
@@ -55,7 +55,10 @@ const Login = () => {
     }
 
     const handleResetPassword = () => {
-
+            if(!userEmail){
+                alert('please write your email address and after writing your email please click on you email otherwise yon cant reset your password')
+                return;
+            }
         sendPasswordResetEmail(auth, userEmail)
             .then( () =>{
                 
@@ -109,9 +112,9 @@ const Login = () => {
                     <div className="divider">OR</div>
                     <button onClick={handleGoogle} className='btn btn-primary w-full'> <span className='pr-2'> </span><FcGoogle className='mr-2 text-2xl'></FcGoogle> Login With Google</button>
                 </form>
-                <small className='flex justify-between'>
-                        <button onClick={handleResetPassword} className="btn btn-link">Reset-password</button>
-                       <button type='button' className="btn btn-link">Forget-password</button>
+                <small className='flex justify-center'>
+                        <button onClick={handleResetPassword} className="btn btn-link">Forget-password?</button>
+                       {/* <button type='button' className="btn btn-link">Forget-password</button> */}
                 </small> 
             </div>
         </div>

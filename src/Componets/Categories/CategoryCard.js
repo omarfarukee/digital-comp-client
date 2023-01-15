@@ -32,8 +32,8 @@ const CategoryCard = ({ category }) => {
         }
   }
     return (
-        <div>
-            <div className="card w-96 h-64 bg-base-100 shadow-xl image-full">
+        <div className='mb-3'>
+            <div className="card w-11/12 ml-3 lg:ml-0 lg:w-96 h-64 bg-base-100 shadow-xl image-full">
                 <figure><img src={image} alt="Shoes" /></figure>
 
                 <div className="card-body">
@@ -44,7 +44,7 @@ const CategoryCard = ({ category }) => {
 
                     <div className="card-actions justify-end mt-20">
                         <Link to={`/products/${_id}`}><button className="btn btn-primary">see products</button></Link>
-                      <Link to={`/categories/${_id}`}><button className="btn btn-primary"><FaEdit></FaEdit></button></Link>  
+                      <Link to={`/categories/${_id}`}><button className="btn btn-warning" title='Edit category'><FaEdit></FaEdit></button></Link>  
                     </div>
                 </div>
             </div>

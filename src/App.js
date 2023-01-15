@@ -14,6 +14,7 @@ import AddProducts from './Componets/AddProducts/AddProducts';
 import ProductEdit from './Componets/ProductEdit/ProductEdit';
 import CategoryAdd from './Componets/CategoryAdd/CategoryAdd';
 import CategoryEdit from './Componets/Categories/CategoryEdit';
+import Private from './Private/Private';
 
 function App() {
 
@@ -44,11 +45,11 @@ const router = createBrowserRouter([
       },
       {
         path:'/addProducts',
-        element:<AddProducts></AddProducts>
+        element:<Private><AddProducts></AddProducts></Private>
       },
       {
         path:'/addCategory',
-        element:<CategoryAdd></CategoryAdd>
+        element:<Private><CategoryAdd></CategoryAdd></Private>
       },
       {
         path:'/information/:id',

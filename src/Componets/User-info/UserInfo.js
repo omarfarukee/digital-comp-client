@@ -25,15 +25,15 @@ const UserInfo = () => {
             <div className='flex justify-center'>
                 {
                     info[0]?.age ? <></>:
-                     <p className='text-3xl text-red-400 font-bold'>Please set your info on 'Set-info' menu</p>
+                     <p className='text-3xl text-red-400 font-bold text-center'>Please set your info on 'Set-info' menu</p>
                 }
                
             </div>
             <div  className='flex justify-center'>
                 
-                <div className='pt-4 flex items-center'>
+                <div className='pt-4 lg:flex items-center mb-10'>
                     <div className='mr-8'>
-                        {user?.photoURL ? <img className='rounded-full h-28' src={user?.photoURL} alt="" /> : <p className='text-9xl'><FaUserCircle></FaUserCircle> </p>}
+                        {user?.photoURL ? <img className='rounded-full h-28 ml-24' src={user?.photoURL} alt="" /> : <p className='text-9xl ml-20'><FaUserCircle></FaUserCircle> </p>}
                     </div>
                     <div>
                         <form>
